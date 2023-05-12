@@ -5,23 +5,27 @@ import { getPosition } from "@/helpers/location";
 import styles from "../page.module.css";
 
 type Position = {
-  lat: string;
-  long: string;
+  coords: { lat: string; long: string };
+
+  time: number;
 };
 
 export default function Position() {
   const [position, setPosition] = React.useState<Position | null>();
-
+  console.log(position);
   React.useEffect(() => {
-    // When Component is mounting, user's location is set
+    // When C   omponent is mounting, user's location is set
 
-    getPosition();
+    getPosition(setPosition);
   }, []);
 
   return (
     <Layout>
       <section className={styles.main}>
         <div>POSITION</div>
+        <span>
+          Your position is {position?.coords.lat} X {position?.coords.long}
+        </span>
       </section>
     </Layout>
   );

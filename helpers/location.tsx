@@ -1,13 +1,18 @@
-export const getPosition = async () => {
+export const getPosition = async (setPosish: any) => {
   if (!navigator.geolocation) {
     return "Geolocation not supported";
   }
   navigator.geolocation.getCurrentPosition(
     (position) => {
-      console.log(position);
+      setPosish({
+        coords: {
+          lat: position.coords.latitude,
+          long: position.coords.longitude,
+        },
+
+        time: position.timestamp,
+      });
     },
-    () => {
-      console.log("couldnt retrieve location");
-    }
+    () => {}
   );
 };
