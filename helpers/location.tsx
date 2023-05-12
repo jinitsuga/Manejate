@@ -1,4 +1,4 @@
-export const getPosition = async (setPosition: any) => {
+export const getPosition = async () => {
   if (!navigator.geolocation) {
     return "Geolocation not supported";
   }

@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Layout from "@/components/layout";
-import { getPosition } from "@/helpers/location";
+import React from "react";
+import Link from "next/link";
 
 // console.log(process.env.MAPS_KEY);
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
           cercanía. Puedes optar por no revelar tu ubicación, pero de no
           hacerlo, la app no funcionará correctamente.
         </p>
+        <Link href="/position">Comenzar</Link>
       </main>
     </Layout>
   );
