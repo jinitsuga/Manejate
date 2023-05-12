@@ -1,7 +1,8 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 import Layout from "@/components/layout";
+import { getPosition } from "@/helpers/location";
 
+// console.log(process.env.MAPS_KEY);
 export default function Home() {
   return (
     <Layout>
