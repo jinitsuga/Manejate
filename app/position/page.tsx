@@ -23,17 +23,23 @@ export default function Position() {
   return (
     <Layout>
       <section className={styles.main}>
-        <div>POSITION</div>
-        <span>
-          Your position is {position?.coords.lat} X {position?.coords.long}
-        </span>
-        <button
-          onClick={() => {
-            logPosition();
-          }}
-        >
-          Log position
-        </button>
+        {position ? (
+          <div>
+            <div>POSITION</div>
+            <span>
+              Your position is {position?.coords.lat} X {position?.coords.long}
+            </span>
+            <button
+              onClick={() => {
+                logPosition();
+              }}
+            >
+              Log position
+            </button>
+          </div>
+        ) : (
+          <div>Posicionándote...</div>
+        )}
         {/* {position && (
           <div>
             <span>Lat: {position?.coords.lat}</span>
