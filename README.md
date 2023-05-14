@@ -14,21 +14,9 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+##### The Idea
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-- Project potentially paused since Google Places API asks for a CREDIT CARD in order to be used, to confirm "you're not a bot" --
+I live in a small town with ~10k people and fairly scattered. Knowing which businesses are open when can be challenging, so the main idea behind this app is to be able to check what businesses are open around a certain radius from the user, by combining the Geolocation API provided by browsers with google maps Places API.
+Quite a bit of trial and error went into having a working environment to work on this one... Ended up digging a tunnel with Ngrok so I could have my phone's browser with an HTTPS (instead of http) address, which enables the Geolocation API to ping the browser and ask for permission to locate the device (where as if it's an http connection, the permission is instantly declined since it isn't safe). Also kept my phone connected to the PC to see the console and being able to work over phone stuff directly on the big screen.
+Ended up getting a comfortable working environment, so hopefully I can resolve the Google Places API issue soon...
