@@ -1,24 +1,25 @@
 "use client";
 import React from "react";
 import Layout from "@/components/layout";
-import { getPosition } from "@/helpers/location";
+import { getPosition, watchPosition } from "@/helpers/location";
 import styles from "../page.module.css";
 
 type Position = {
-  coords: { lat: string; long: string };
-
+  coords: { lat: number; long: number };
   time: number;
 };
 
 export default function Position() {
   const [position, setPosition] = React.useState<Position | null>();
-  console.log(position);
   React.useEffect(() => {
-    // When C   omponent is mounting, user's location is set
-
     getPosition(setPosition);
+    console.log("getposition is being run ");
   }, []);
 
+  const logPosition = () => {
+    console.log(position);
+  };
+  console.log(position);
   return (
     <Layout>
       <section className={styles.main}>
@@ -26,6 +27,19 @@ export default function Position() {
         <span>
           Your position is {position?.coords.lat} X {position?.coords.long}
         </span>
+        <button
+          onClick={() => {
+            logPosition();
+          }}
+        >
+          Log position
+        </button>
+        {/* {position && (
+          <div>
+            <span>Lat: {position?.coords.lat}</span>
+            <span>Long: {position?.coords.long}</span>
+          </div>
+        )} */}
       </section>
     </Layout>
   );
