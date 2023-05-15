@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const getPosition = async (setPosish: any) => {
   if (!navigator.geolocation) {
     console.log("navigator not supported");
@@ -36,4 +38,13 @@ export const watchPosition = async (setPosish: any) => {
   );
 
   return watchId;
+};
+
+export const findPlaces = async (lat: number, long: number, radius: number) => {
+  const reqUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=${radius}&openNow=${true}&key=${
+    process.env.MAPS_KEY
+  }`;
+  const res = await fetch(reqUrl);
+  const data = res.json();
+  return data;
 };

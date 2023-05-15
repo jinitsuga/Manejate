@@ -55,12 +55,6 @@ export default function Position() {
         ) : (
           <div>Posicionándote...</div>
         )}
-        {/* {position && (
-          <div>
-            <span>Lat: {position?.coords.lat}</span>
-            <span>Long: {position?.coords.long}</span>
-          </div>
-        )} */}
       </section>
     </Layout>
   );

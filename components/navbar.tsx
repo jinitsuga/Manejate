@@ -1,6 +1,5 @@
 import styles from "./layout.module.css";
 import Link from "next/link";
-import RootLayout from "@/app/layout";
 
 export default function Navbar() {
   return (
