@@ -3,6 +3,7 @@ import React from "react";
 import Layout from "@/components/layout";
 import { getPosition, watchPosition } from "@/helpers/location";
 import styles from "../page.module.css";
+import Link from "next/link";
 
 type Position = {
   coords: { lat: number; long: number };
@@ -44,13 +45,11 @@ export default function Position() {
             <span>
               Your position is {position?.coords.lat} X {position?.coords.long}
             </span>
-            <button
-              onClick={() => {
-                logPosition();
-              }}
+            <Link
+              href={`/position/${position.coords.lat}~${position.coords.long}~1000`}
             >
-              Log position
-            </button>
+              Find nearby places
+            </Link>
           </div>
         ) : (
           <div>Posicionándote...</div>
