@@ -12,13 +12,28 @@ type Position = {
 export default function Position() {
   const [position, setPosition] = React.useState<Position | null>();
   React.useEffect(() => {
-    getPosition(setPosition);
+    let positionTime: number = 0;
+    // Not using this atm so I don't depend on having phone around to develop:
+    // The REAL get position function -->
+    // getPosition(setPosition);
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        positionTime = position.timestamp;
+      },
+      () => {},
+      { enableHighAccuracy: true, maximumAge: 10000, timeout: 5000 }
+    );
+    setPosition({
+      coords: { lat: -34.6657801, long: -54.1536834 },
+      time: positionTime,
+    });
     console.log("getposition is being run ");
   }, []);
 
   const logPosition = () => {
     console.log(position);
   };
+
   console.log(position);
   return (
     <Layout>

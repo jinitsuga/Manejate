@@ -15,7 +15,6 @@ export const getPosition = async (setPosish: any) => {
     () => {},
     { enableHighAccuracy: true, maximumAge: 10000, timeout: 5000 }
   );
-  console.log("getposition is being run ");
 };
 
 export const watchPosition = async (setPosish: any) => {
