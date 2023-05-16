@@ -5,7 +5,7 @@ export type Place = {
   lng: number;
   types: Array<string>;
 };
-export default function placeCard({ name, open, types }: Place) {
+export default function PlaceCard({ name, open, types }: Place) {
   return (
     <div>
       <h4>{name}</h4>
