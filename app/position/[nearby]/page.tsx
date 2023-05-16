@@ -2,17 +2,18 @@ import { findPlaces } from "@/helpers/location";
 
 console.log("location pinged");
 export default async function Places({ params }: any) {
-  const { nearby } = params;
+  const lat = Number(params.nearby.split("~")[0]);
+  const long = Number(params.nearby.split("~")[1]);
+  const radius = Number(params.nearby.split("~")[2]);
 
-  console.log(params.nearby.split("~"));
-  // const places = await findPlaces(lat, long, radius);
+  const places = await findPlaces(lat, long, radius);
+  console.log(places);
+
+  const locationName: string = places.results[0].name;
+
   return (
     <div>
-      <ul>
-        <li>{nearby}</li>
-        {/* <li>{long}</li>
-        <li>{radius}</li> */}
-      </ul>
+      <h2>You are in {locationName} </h2>
     </div>
   );
 }
