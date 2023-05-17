@@ -4,9 +4,11 @@ import PlaceCard from "@/components/placeCard";
 
 console.log("location pinged");
 export default async function Places({ params }: any) {
-  const lat = Number(params.nearby.split("~")[0]);
-  const long = Number(params.nearby.split("~")[1]);
-  const radius = Number(params.nearby.split("~")[2]);
+  const paramsArr = params.nearby.split("~");
+
+  const lat = Number(paramsArr[0]);
+  const long = Number(paramsArr[1]);
+  const radius = Number(paramsArr[2]);
 
   const places = await findPlaces(lat, long, radius);
 

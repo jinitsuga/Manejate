@@ -1,3 +1,5 @@
+import mapsContent from "./MapsContent";
+
 export type Place = {
   name: string;
   open: boolean;
@@ -7,6 +9,8 @@ export type Place = {
   id: string;
 };
 export default function PlaceCard({ name, open, types }: Place) {
+  // Implementing the rendering of the map with the route traced
+
   return (
     <div>
       <h4>{name}</h4>
