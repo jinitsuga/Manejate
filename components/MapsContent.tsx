@@ -28,7 +28,7 @@ const mapsContent: FC<mapContent> = ({ origin, destinationId }) => {
         options={{
           destination: destinationId,
           origin: origin,
-          travelMode: "WALKING",
+          travelMode: "WALKING" as google.maps.TravelMode,
         }}
         callback={(result, status) => {
           if (status === "OK") {
