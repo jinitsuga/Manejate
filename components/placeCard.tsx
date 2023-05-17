@@ -4,6 +4,7 @@ export type Place = {
   lat: number;
   lng: number;
   types: Array<string>;
+  id: string;
 };
 export default function PlaceCard({ name, open, types }: Place) {
   return (

@@ -26,6 +26,7 @@ export default async function Places({ params }: any) {
     return (
       <li>
         <PlaceCard
+          id={place.id}
           key={id}
           types={place.types}
           name={place.name}
