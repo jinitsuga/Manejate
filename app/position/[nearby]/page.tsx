@@ -19,13 +19,14 @@ export default async function Places({ params }: any) {
     }
     return place.opening_hours.open_now;
   });
-
+  console.log(openPlaces);
   const placeCards = openPlaces.map((place: any, id: number) => {
     const placeLat: number = place.geometry.location.lat;
     const placeLng: number = place.geometry.location.lng;
     return (
       <li>
         <PlaceCard
+          key={id}
           types={place.types}
           name={place.name}
           lat={placeLat}
@@ -37,7 +38,6 @@ export default async function Places({ params }: any) {
   });
 
   const locationName: string = places.results[0].name;
-  console.log(openPlaces[2].geometry.location);
 
   return (
     <Layout>

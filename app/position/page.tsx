@@ -46,7 +46,7 @@ export default function Position() {
               Your position is {position?.coords.lat} X {position?.coords.long}
             </span>
             <Link
-              href={`/position/${position.coords.lat}~${position.coords.long}~1000`}
+              href={`/position/${position.coords.lat}~${position.coords.long}~5000`}
             >
               Find nearby places
             </Link>

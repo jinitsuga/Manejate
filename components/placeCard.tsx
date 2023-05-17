@@ -9,7 +9,7 @@ export default function PlaceCard({ name, open, types }: Place) {
   return (
     <div>
       <h4>{name}</h4>
-      {open ? <span>OPEN</span> : <span>Closed</span>}
+      {open ? <span>OPEN</span> : <span>Closed</span>} <br />
       <span>{types[0]}</span>
     </div>
   );
