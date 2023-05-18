@@ -1,0 +1,23 @@
+.route-btn {
+  height: 50px;
+  width: 125px;
+  border-radius: 4px;
+  border: none;
+  background-color: rgb(235, 174, 95);
+  margin: 4px;
+}
+.route-btn:active {
+  border: solid 2px;
+}
+.route-btn:hover {
+  background-color: rgb(235, 170, 5);
+  cursor: pointer;
+}
+.map-modal {
+  height: 400px;
+  position: fixed;
+  background-color: aquamarine;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}

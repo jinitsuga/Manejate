@@ -42,7 +42,7 @@ export const watchPosition = async (setPosish: any) => {
 
 export const findPlaces = async (lat: number, long: number, radius: number) => {
   const reqUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=${radius}&openNow=${true}&key=${
-    process.env.MAPS_KEY
+    process.env.NEXT_PUBLIC_MAPS_KEY
   }`;
   const res = await fetch(reqUrl);
   const data = res.json();

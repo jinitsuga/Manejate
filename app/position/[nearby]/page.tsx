@@ -28,10 +28,11 @@ export default async function Places({ params }: any) {
     return (
       <li>
         <PlaceCard
-          id={place.id}
+          id={place.place_id}
           key={id}
           types={place.types}
           name={place.name}
+          origin={{ lat, lng: long }}
           lat={placeLat}
           lng={placeLng}
           open={place.opening_hours.open_now}

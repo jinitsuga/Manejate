@@ -1,5 +1,7 @@
-import { useEffect, useState, FC } from "react";
+"use client";
+import { FC } from "react";
 import {
+  LoadScript,
   GoogleMap,
   Marker,
   DirectionsRenderer,
@@ -8,35 +10,37 @@ import {
 
 type mapContent = {
   origin: { lat: number; lng: number };
-  destinationId: string;
+  destinationId?: string;
+  destinCoords: { lat: number; lng: number };
 };
 
-const MapsContent: FC<mapContent> = ({ origin, destinationId }) => {
-  // const [startingPoint, setStartingPoint] = useState<typeof origin | null>(
-  //   null
-  // );
+const apiKey: string = process.env.NEXT_PUBLIC_MAPS_KEY!;
 
-  // useEffect(() => {}, []);
-
+const MapsContent: FC<mapContent> = ({
+  origin,
+  destinationId,
+  destinCoords,
+}) => {
   const renderRoute = (directions: any) => (
     <DirectionsRenderer directions={directions} />
   );
-
   return (
-    <GoogleMap id="map" zoom={10} center={origin}>
-      <DirectionsService
-        options={{
-          destination: destinationId,
-          origin: origin,
-          travelMode: "WALKING" as google.maps.TravelMode,
-        }}
-        callback={(result, status) => {
-          if (status === "OK") {
-            renderRoute(result);
-          }
-        }}
-      ></DirectionsService>
-    </GoogleMap>
+    <LoadScript googleMapsApiKey={apiKey}>
+      <GoogleMap id="map" zoom={10} center={origin}>
+        <DirectionsService
+          options={{
+            destination: destinCoords,
+            origin: { lat: -34.6657801, lng: -54.1536834 },
+            travelMode: "WALKING" as google.maps.TravelMode,
+          }}
+          callback={(result, status) => {
+            if (status === "OK") {
+              renderRoute(result);
+            }
+          }}
+        ></DirectionsService>
+      </GoogleMap>
+    </LoadScript>
   );
 };
 
