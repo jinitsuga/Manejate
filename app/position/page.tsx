@@ -14,7 +14,8 @@ export default function Position() {
   const [position, setPosition] = React.useState<Position | null>();
   React.useEffect(() => {
     let positionTime: number = 0;
-    // Not using this atm so I don't depend on having phone around to develop:
+    // Not using this atm so I don't depend on having phone around
+    // hardcoding coords while I develop
     // The REAL get position function -->
     // getPosition(setPosition);
     navigator.geolocation.getCurrentPosition(

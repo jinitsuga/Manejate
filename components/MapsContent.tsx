@@ -11,7 +11,7 @@ type mapContent = {
   destinationId: string;
 };
 
-const mapsContent: FC<mapContent> = ({ origin, destinationId }) => {
+const MapsContent: FC<mapContent> = ({ origin, destinationId }) => {
   // const [startingPoint, setStartingPoint] = useState<typeof origin | null>(
   //   null
   // );
@@ -40,4 +40,4 @@ const mapsContent: FC<mapContent> = ({ origin, destinationId }) => {
   );
 };
 
-export default mapsContent;
+export default MapsContent;
