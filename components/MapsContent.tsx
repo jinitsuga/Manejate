@@ -1,5 +1,5 @@
 "use client";
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
 import {
   LoadScript,
   GoogleMap,
@@ -21,12 +21,25 @@ const MapsContent: FC<mapContent> = ({
   destinationId,
   destinCoords,
 }) => {
-  const renderRoute = (directions: any) => (
-    <DirectionsRenderer directions={directions} />
-  );
+  const [directions, setDirections] = useState<any>();
+
+  const renderRoute = (directions: any) => {
+    if (directions) {
+      console.log("directions are ok");
+      return <DirectionsRenderer directions={directions} />;
+    }
+    return null;
+  };
+
   return (
     <LoadScript googleMapsApiKey={apiKey}>
-      <GoogleMap id="map" zoom={10} center={origin}>
+      <GoogleMap
+        mapContainerStyle={{ width: "500px", height: "100%" }}
+        id="map"
+        zoom={16}
+        center={origin}
+      >
+        {directions && renderRoute(directions)}
         <DirectionsService
           options={{
             destination: destinCoords,
@@ -34,8 +47,9 @@ const MapsContent: FC<mapContent> = ({
             travelMode: "WALKING" as google.maps.TravelMode,
           }}
           callback={(result, status) => {
-            if (status === "OK") {
-              renderRoute(result);
+            if (status === "OK" && !directions) {
+              console.log("DIRECTIONS OK");
+              setDirections(result);
             }
           }}
         ></DirectionsService>

@@ -15,8 +15,9 @@
 }
 .map-modal {
   height: 400px;
+  width: 100%;
   position: fixed;
-  background-color: aquamarine;
+  background-color: rgba(127, 255, 212, 0.479);
   z-index: 100;
   top: 0;
   left: 0;
