@@ -28,7 +28,18 @@ const MapsContent: FC<mapContent> = ({
   mapShown,
 }) => {
   const [directions, setDirections] = useState<any>();
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const checkForClick = (e: any) => {
+      if (map.current && !map.current.contains(e.target)) {
+        closeMap(false);
+      }
+    };
+    document.addEventListener("click", checkForClick, true);
+    return () => {
+      console.log("unmounted");
+      document.removeEventListener("click", checkForClick);
+    };
+  }, []);
 
   const map = useRef<HTMLDivElement>(null);
 
