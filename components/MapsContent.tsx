@@ -1,5 +1,6 @@
 "use client";
-import { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, useRef } from "react";
+import "./placeCard.css";
 import {
   LoadScript,
   GoogleMap,
@@ -12,6 +13,9 @@ type mapContent = {
   origin: { lat: number; lng: number };
   destinationId?: string;
   destinCoords: { lat: number; lng: number };
+  closeMap?: any;
+  mapElement?: any;
+  mapShown?: boolean;
 };
 
 const apiKey: string = process.env.NEXT_PUBLIC_MAPS_KEY!;
@@ -20,8 +24,15 @@ const MapsContent: FC<mapContent> = ({
   origin,
   destinationId,
   destinCoords,
+  closeMap,
+  mapShown,
 }) => {
   const [directions, setDirections] = useState<any>();
+  useEffect(() => {}, []);
+
+  const map = useRef<HTMLDivElement>(null);
+
+  console.log("map logl ol");
 
   const renderRoute = (directions: any) => {
     if (directions) {
@@ -32,29 +43,31 @@ const MapsContent: FC<mapContent> = ({
   };
 
   return (
-    <LoadScript googleMapsApiKey={apiKey}>
-      <GoogleMap
-        mapContainerStyle={{ width: "500px", height: "100%" }}
-        id="map"
-        zoom={16}
-        center={origin}
-      >
-        {directions && renderRoute(directions)}
-        <DirectionsService
-          options={{
-            destination: destinCoords,
-            origin: { lat: -34.6657801, lng: -54.1536834 },
-            travelMode: "WALKING" as google.maps.TravelMode,
-          }}
-          callback={(result, status) => {
-            if (status === "OK" && !directions) {
-              console.log("DIRECTIONS OK");
-              setDirections(result);
-            }
-          }}
-        ></DirectionsService>
-      </GoogleMap>
-    </LoadScript>
+    <div className="map-modal" ref={map}>
+      <LoadScript googleMapsApiKey={apiKey}>
+        <GoogleMap
+          mapContainerStyle={{ width: "500px", height: "100%" }}
+          id="map"
+          zoom={16}
+          center={origin}
+        >
+          {directions && renderRoute(directions)}
+          <DirectionsService
+            options={{
+              destination: destinCoords,
+              origin: { lat: -34.6657801, lng: -54.1536834 },
+              travelMode: "WALKING" as google.maps.TravelMode,
+            }}
+            callback={(result, status) => {
+              if (status === "OK" && !directions) {
+                console.log("DIRECTIONS OK");
+                setDirections(result);
+              }
+            }}
+          ></DirectionsService>
+        </GoogleMap>
+      </LoadScript>
+    </div>
   );
 };
 

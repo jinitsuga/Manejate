@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import MapsContent from "./MapsContent";
 import "./placeCard.css";
 
@@ -25,14 +25,7 @@ export default function PlaceCard({
   const [mapShown, setMapShown] = useState<boolean>(false);
 
   // Setting up closing map modal on outside click
-  useEffect(() => {
-    if (!mapShown) {
-      return;
-    }
-    const handleClick = (event: any) => {};
-  }, [mapShown]);
 
-  const map = useRef(null);
   return (
     <div>
       <h4>{name}</h4>
@@ -48,10 +41,17 @@ export default function PlaceCard({
       >
         Mostrame como ir
       </button>
-      {routeShown && (
-        <div className="map-modal" ref={map}>
-          <MapsContent origin={origin} destinCoords={{ lat, lng }} />
+      {routeShown ? (
+        <div className="map-modal">
+          <MapsContent
+            mapShown={routeShown}
+            closeMap={setRouteShown}
+            origin={origin}
+            destinCoords={{ lat, lng }}
+          />
         </div>
+      ) : (
+        ""
       )}
     </div>
   );
