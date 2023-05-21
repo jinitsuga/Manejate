@@ -36,18 +36,14 @@ const MapsContent: FC<mapContent> = ({
     };
     document.addEventListener("click", checkForClick, true);
     return () => {
-      console.log("unmounted");
       document.removeEventListener("click", checkForClick);
     };
   }, []);
 
   const map = useRef<HTMLDivElement>(null);
 
-  console.log("map logl ol");
-
   const renderRoute = (directions: any) => {
     if (directions) {
-      console.log("directions are ok");
       return <DirectionsRenderer directions={directions} />;
     }
     return null;

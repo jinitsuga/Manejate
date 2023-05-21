@@ -6,12 +6,27 @@
   background-color: white;
   color: black;
   padding: 16px;
+  text-align: center;
 }
-
+.headingBig {
+  font-size: 32px;
+}
+.emphasis {
+  color: green;
+  text-decoration: underline;
+}
 .heading {
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .mainText {
   max-width: 700px;
+  text-align: center;
+}
+.mainBtn {
+  font-size: 20px;
+  text-decoration: none;
+  border: solid 2px;
+  border-radius: 4px;
+  padding: 8px;
 }
