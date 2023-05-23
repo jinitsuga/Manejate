@@ -14,9 +14,6 @@ export default async function Places({ params }: any) {
   const places = await findPlaces(lat, long, radius);
 
   const openPlaces = places.results.filter((place: any) => {
-    // if (places.results.indexOf(place) < 1) {
-    //   return false;
-    // }
     if (!place.opening_hours) {
       return false;
     }

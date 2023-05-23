@@ -49,7 +49,7 @@ export const PlacesContainer = ({ places, origin }: Places) => {
           <button className={styles.regularBtn}>Estadía</button>
         </li>
       </ul>
-      {cards}
+      <ul>{cards}</ul>
     </div>
   );
 };

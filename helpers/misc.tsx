@@ -11,10 +11,10 @@ export const showFilteredCards = ({ places, origin }: Filtered) => {
     const placeLat: number = place.geometry.location.lat;
     const placeLng: number = place.geometry.location.lng;
     return (
-      <li>
+      <li key={place.place_id}>
         <PlaceCard
           id={place.place_id}
-          key={id}
+          key={place.place_id}
           types={place.types}
           name={place.name}
           origin={origin}
