@@ -1,4 +1,5 @@
-import { useState } from "react";
+"use client";
+import { ReactNode, useState } from "react";
 import PlaceCard from "./placeCard";
 import { Place } from "./placeCard";
 import { showFilteredCards } from "@/helpers/misc";
@@ -16,7 +17,8 @@ export const PlacesContainer = ({ places, origin }: Places) => {
   const [filter, setFilter] = useState<PlaceFilter>("all");
 
   // Filtering set of cards depending on filter selected by user.
-  const cards = () => {
+  const makeCards = () => {
+    console.log("making cards");
     if (filter === "food") {
       const foodPlaces = places.filter((place: any) =>
         place.types.includes("food")
@@ -35,6 +37,8 @@ export const PlacesContainer = ({ places, origin }: Places) => {
     }
   };
 
+  const cards = makeCards();
+
   return (
     <div>
       <ul>
@@ -45,6 +49,7 @@ export const PlacesContainer = ({ places, origin }: Places) => {
           <button className={styles.regularBtn}>Estadía</button>
         </li>
       </ul>
+      {cards}
     </div>
   );
 };
