@@ -2,6 +2,7 @@ import { useState } from "react";
 import PlaceCard from "./placeCard";
 import { Place } from "./placeCard";
 import { showFilteredCards } from "@/helpers/misc";
+import styles from "../app/page.module.css";
 
 type Origin = { lat: number; lng: number };
 
@@ -34,5 +35,16 @@ export const PlacesContainer = ({ places, origin }: Places) => {
     }
   };
 
-  return <section></section>;
+  return (
+    <div>
+      <ul>
+        <li>
+          <button className={styles.regularBtn}>Comida</button>
+        </li>
+        <li>
+          <button className={styles.regularBtn}>Estadía</button>
+        </li>
+      </ul>
+    </div>
+  );
 };

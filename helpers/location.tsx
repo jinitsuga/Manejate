@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export const getPosition = async (setPosish: any) => {
   if (!navigator.geolocation) {
     console.log("navigator not supported");

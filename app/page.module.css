@@ -29,3 +29,10 @@
   border-radius: 4px;
   padding: 8px;
 }
+.regularBtn {
+  font-size: 18px;
+  text-decoration: none;
+  border: solid 2px;
+  border-radius: 4px;
+  padding: 5px;
+}
