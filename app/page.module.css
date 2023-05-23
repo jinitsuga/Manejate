@@ -40,3 +40,16 @@
   cursor: pointer;
   color: green;
 }
+
+.btnList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 0;
+}
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

@@ -1,6 +1,5 @@
 import { findPlaces } from "@/helpers/location";
 import Layout from "@/components/layout";
-import PlaceCard from "@/components/placeCard";
 import { PlacesContainer } from "@/components/placesContainer";
 
 console.log("location pinged");
@@ -20,24 +19,6 @@ export default async function Places({ params }: any) {
     return place.opening_hours.open_now;
   });
   console.log(openPlaces);
-  // const placeCards = openPlaces.map((place: any, id: number) => {
-  //   const placeLat: number = place.geometry.location.lat;
-  //   const placeLng: number = place.geometry.location.lng;
-  //   return (
-  //     <li>
-  //       <PlaceCard
-  //         id={place.place_id}
-  //         key={id}
-  //         types={place.types}
-  //         name={place.name}
-  //         origin={{ lat, lng: long }}
-  //         lat={placeLat}
-  //         lng={placeLng}
-  //         open={place.opening_hours.open_now}
-  //       />
-  //     </li>
-  //   );
-  // });
 
   const locationName: string = places.results[0].name;
 

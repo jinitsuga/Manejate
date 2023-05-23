@@ -40,8 +40,8 @@ export const PlacesContainer = ({ places, origin }: Places) => {
   const cards: any = makeCards();
   console.log(cards?.length);
   return (
-    <div>
-      <ul>
+    <div className={styles.centerContainer}>
+      <ul className={styles.btnList}>
         <li>
           <button
             onClick={() => {
