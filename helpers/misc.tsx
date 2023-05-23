@@ -2,11 +2,11 @@ import { Place } from "@/components/placeCard";
 import PlaceCard from "@/components/placeCard";
 
 type Filtered = {
-  places: Array<Place>;
+  places: Array<any>;
   origin: { lat: number; lng: number };
 };
 
-const showFilteredCards = ({ places, origin }: Filtered) => {
+export const showFilteredCards = ({ places, origin }: Filtered) => {
   return places.map((place: any, id: number) => {
     const placeLat: number = place.geometry.location.lat;
     const placeLng: number = place.geometry.location.lng;
