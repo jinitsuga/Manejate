@@ -74,9 +74,11 @@ export const PlacesContainer = ({ places, origin }: Places) => {
         </li>
       </ul>
       {cards.length < 1 ? (
-        <span>No hay ninguno de esos locales abiertos.</span>
+        <span style={{ maxWidth: "220px" }}>
+          No hay ninguno de esos locales abiertos.
+        </span>
       ) : (
-        cards
+        <ul className={styles.cardsList}>{cards}</ul>
       )}
     </div>
   );

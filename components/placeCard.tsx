@@ -27,9 +27,14 @@ export default function PlaceCard({
   // Setting up closing map modal on outside click
 
   return (
-    <div>
+    <div className="cardContainer">
       <h4>{name}</h4>
-      {open ? <span>OPEN</span> : <span>Closed</span>} <br />
+      {open ? (
+        <span className="greenText">Abierto</span>
+      ) : (
+        <span>Cerrado</span>
+      )}{" "}
+      <br />
       <span>{types[0]}</span>
       <button
         onClick={(e) => {
@@ -39,7 +44,7 @@ export default function PlaceCard({
         }}
         className="route-btn"
       >
-        Mostrame como ir
+        Cómo ir
       </button>
       {routeShown ? (
         <div className="map-modal">

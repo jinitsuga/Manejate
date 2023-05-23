@@ -24,7 +24,7 @@ export default async function Places({ params }: any) {
 
   return (
     <Layout>
-      <div>
+      <div style={{ textAlign: "center" }}>
         <h2>You are in {locationName}</h2>
         <PlacesContainer places={openPlaces} origin={{ lat, lng: long }} />
       </div>
