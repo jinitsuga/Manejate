@@ -37,19 +37,47 @@ export const PlacesContainer = ({ places, origin }: Places) => {
     }
   };
 
-  const cards = makeCards();
-
+  const cards: any = makeCards();
+  console.log(cards?.length);
   return (
     <div>
       <ul>
         <li>
-          <button className={styles.regularBtn}>Comida</button>
+          <button
+            onClick={() => {
+              setFilter("food");
+            }}
+            className={styles.regularBtn}
+          >
+            Comida
+          </button>
         </li>
         <li>
-          <button className={styles.regularBtn}>Estadía</button>
+          <button
+            onClick={() => {
+              setFilter("lodging");
+            }}
+            className={styles.regularBtn}
+          >
+            Estadía
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={() => {
+              setFilter("all");
+            }}
+            className={styles.regularBtn}
+          >
+            Todos
+          </button>
         </li>
       </ul>
-      <ul>{cards}</ul>
+      {cards.length < 1 ? (
+        <span>No hay ninguno de esos locales abiertos.</span>
+      ) : (
+        cards
+      )}
     </div>
   );
 };

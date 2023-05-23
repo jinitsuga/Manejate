@@ -36,3 +36,7 @@
   border-radius: 4px;
   padding: 5px;
 }
+.regularBtn:hover {
+  cursor: pointer;
+  color: green;
+}
