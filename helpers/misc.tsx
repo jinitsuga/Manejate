@@ -6,7 +6,7 @@ type Filtered = {
   origin: { lat: number; lng: number };
 };
 
-export const showFilteredCards = ({ places, origin }: Filtered) => {
+export const renderFilteredCards = ({ places, origin }: Filtered) => {
   return places.map((place: any, id: number) => {
     const placeLat: number = place.geometry.location.lat;
     const placeLng: number = place.geometry.location.lng;

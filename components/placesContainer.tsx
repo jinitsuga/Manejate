@@ -2,7 +2,7 @@
 import { ReactNode, useState } from "react";
 import PlaceCard from "./placeCard";
 import { Place } from "./placeCard";
-import { showFilteredCards } from "@/helpers/misc";
+import { renderFilteredCards } from "@/helpers/misc";
 import styles from "../app/page.module.css";
 
 type Origin = { lat: number; lng: number };
@@ -17,13 +17,15 @@ export const PlacesContainer = ({ places, origin }: Places) => {
   const [filter, setFilter] = useState<PlaceFilter>("all");
 
   // Filtering set of cards depending on filter selected by user.
+  // REFACTORING THIS INTO 'RENDERFILTERCARDS' FUNCTION TO AVOID REPETITION AND HAVE LOGIC IN 1 PLACE
   const makeCards = () => {
     console.log("making cards");
+
     if (filter === "food") {
       const foodPlaces = places.filter((place: any) =>
         place.types.includes("food")
       );
-      return showFilteredCards({ places: foodPlaces, origin });
+      return renderFilteredCards({ places: foodPlaces, origin });
     }
     if (filter === "lodging") {
       const lodgingPlaces = places.filter(
@@ -31,9 +33,9 @@ export const PlacesContainer = ({ places, origin }: Places) => {
           place.types.includes("lodging") ||
           place.types.includes("real_estate_agency")
       );
-      return showFilteredCards({ places: lodgingPlaces, origin });
+      return renderFilteredCards({ places: lodgingPlaces, origin });
     } else if (filter === "all") {
-      return showFilteredCards({ places, origin });
+      return renderFilteredCards({ places, origin });
     }
   };
 
