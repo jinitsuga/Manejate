@@ -2,6 +2,10 @@
 import { useState } from "react";
 import { renderFilteredCards } from "@/helpers/misc";
 import styles from "../app/page.module.css";
+import Image from "next/image";
+import foodIcon from "../app/food-dish.png";
+import bedIcon from "../app/bed.png";
+import clipboardIcon from "../app/clipboard.png";
 
 type Origin = { lat: number; lng: number };
 
@@ -30,6 +34,7 @@ export const PlacesContainer = ({ places, origin }: Places) => {
             }}
             className={styles.regularBtn}
           >
+            <Image src={foodIcon} width={30} height={30} alt="food icon" />
             Comida
           </button>
         </li>
@@ -40,6 +45,7 @@ export const PlacesContainer = ({ places, origin }: Places) => {
             }}
             className={styles.regularBtn}
           >
+            <Image src={bedIcon} width={30} height={30} alt="bed icon" />
             Estadía
           </button>
         </li>
@@ -50,6 +56,12 @@ export const PlacesContainer = ({ places, origin }: Places) => {
             }}
             className={styles.regularBtn}
           >
+            <Image
+              src={clipboardIcon}
+              width={30}
+              height={30}
+              alt="all options icon"
+            />
             Todos
           </button>
         </li>

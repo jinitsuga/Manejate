@@ -42,3 +42,6 @@
   padding: 4px;
   margin-bottom: 25px;
 }
+.cardContainer > h4 {
+  font-size: 18px;
+}
