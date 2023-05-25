@@ -4,10 +4,11 @@ import PlaceCard from "@/components/placeCard";
 type Filtered = {
   places: Array<any>;
   origin: { lat: number; lng: number };
+  filterWord: string;
 };
 
-export const renderFilteredCards = ({ places, origin }: Filtered) => {
-  return places.map((place: any, id: number) => {
+const renderCards = (placesArr: any, origin: any) =>
+  placesArr.map((place: any, id: number) => {
     const placeLat: number = place.geometry.location.lat;
     const placeLng: number = place.geometry.location.lng;
     return (
@@ -25,4 +26,47 @@ export const renderFilteredCards = ({ places, origin }: Filtered) => {
       </li>
     );
   });
+
+export const renderFilteredCards = ({
+  places,
+  origin,
+  filterWord,
+}: Filtered) => {
+  switch (filterWord) {
+    case "food":
+      const foodPlaces = places.filter((place: any) =>
+        place.types.includes("food")
+      );
+      return renderCards(foodPlaces, origin);
+
+    case "lodging":
+      const lodgingPlaces = places.filter(
+        (place: Place) =>
+          place.types.includes("lodging") ||
+          place.types.includes("real_estate_agency")
+      );
+      return renderCards(lodgingPlaces, origin);
+
+    case "all":
+      return renderCards(places, origin);
+  }
+
+  // return places.map((place: any, id: number) => {
+  //   const placeLat: number = place.geometry.location.lat;
+  //   const placeLng: number = place.geometry.location.lng;
+  //   return (
+  //     <li key={place.place_id}>
+  //       <PlaceCard
+  //         id={place.place_id}
+  //         key={place.place_id}
+  //         types={place.types}
+  //         name={place.name}
+  //         origin={origin}
+  //         lat={placeLat}
+  //         lng={placeLng}
+  //         open={place.opening_hours.open_now}
+  //       />
+  //     </li>
+  //   );
+  // });
 };

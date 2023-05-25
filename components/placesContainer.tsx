@@ -16,31 +16,12 @@ type PlaceFilter = string;
 export const PlacesContainer = ({ places, origin }: Places) => {
   const [filter, setFilter] = useState<PlaceFilter>("all");
 
-  // Filtering set of cards depending on filter selected by user.
-  // REFACTORING THIS INTO 'RENDERFILTERCARDS' FUNCTION TO AVOID REPETITION AND HAVE LOGIC IN 1 PLACE
-  const makeCards = () => {
-    console.log("making cards");
+  const cards: any = renderFilteredCards({
+    places,
+    origin,
+    filterWord: filter,
+  });
 
-    if (filter === "food") {
-      const foodPlaces = places.filter((place: any) =>
-        place.types.includes("food")
-      );
-      return renderFilteredCards({ places: foodPlaces, origin });
-    }
-    if (filter === "lodging") {
-      const lodgingPlaces = places.filter(
-        (place: Place) =>
-          place.types.includes("lodging") ||
-          place.types.includes("real_estate_agency")
-      );
-      return renderFilteredCards({ places: lodgingPlaces, origin });
-    } else if (filter === "all") {
-      return renderFilteredCards({ places, origin });
-    }
-  };
-
-  const cards: any = makeCards();
-  console.log(cards?.length);
   return (
     <div className={styles.centerContainer}>
       <ul className={styles.btnList}>
