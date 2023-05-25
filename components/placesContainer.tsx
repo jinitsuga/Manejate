@@ -1,7 +1,5 @@
 "use client";
-import { ReactNode, useState } from "react";
-import PlaceCard from "./placeCard";
-import { Place } from "./placeCard";
+import { useState } from "react";
 import { renderFilteredCards } from "@/helpers/misc";
 import styles from "../app/page.module.css";
 

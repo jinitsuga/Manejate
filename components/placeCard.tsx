@@ -34,8 +34,6 @@ export default function PlaceCard({
       ) : (
         <span>Cerrado</span>
       )}{" "}
-      <br />
-      <span>{types[0]}</span>
       <button
         onClick={(e) => {
           e.preventDefault();
