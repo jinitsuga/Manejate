@@ -7,7 +7,7 @@ type Filtered = {
   filterWord: string;
 };
 
-const renderCards = (placesArr: any, origin: any) =>
+const renderCards = (placesArr: Array<Place>, origin: any) =>
   placesArr.map((place: any, id: number) => {
     const placeLat: number = place.geometry.location.lat;
     const placeLng: number = place.geometry.location.lng;
@@ -34,7 +34,7 @@ export const renderFilteredCards = ({
 }: Filtered) => {
   switch (filterWord) {
     case "food":
-      const foodPlaces = places.filter((place: any) =>
+      const foodPlaces = places.filter((place: Place) =>
         place.types.includes("food")
       );
       return renderCards(foodPlaces, origin);
@@ -50,23 +50,4 @@ export const renderFilteredCards = ({
     case "all":
       return renderCards(places, origin);
   }
-
-  // return places.map((place: any, id: number) => {
-  //   const placeLat: number = place.geometry.location.lat;
-  //   const placeLng: number = place.geometry.location.lng;
-  //   return (
-  //     <li key={place.place_id}>
-  //       <PlaceCard
-  //         id={place.place_id}
-  //         key={place.place_id}
-  //         types={place.types}
-  //         name={place.name}
-  //         origin={origin}
-  //         lat={placeLat}
-  //         lng={placeLng}
-  //         open={place.opening_hours.open_now}
-  //       />
-  //     </li>
-  //   );
-  // });
 };
