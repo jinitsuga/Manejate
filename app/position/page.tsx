@@ -41,15 +41,15 @@ export default function Position() {
     <Layout>
       <section className={styles.main}>
         {position ? (
-          <div>
-            <div>POSITION</div>
-            <span>
-              Your position is {position?.coords.lat} X {position?.coords.long}
-            </span>
+          <div className={styles.textContainer}>
+            <span>Encontramos tu posición.</span>
+            {/* This link component should be improved by passing req arguments (&lat=12323&long=123213) etc */}
             <Link
+              className={styles.textBtn}
               href={`/position/${position.coords.lat}~${position.coords.long}~4000`}
             >
-              Find nearby places
+              Mostrar establecimientos cercanos{" "}
+              <span className={styles.emphasis}>abiertos</span>
             </Link>
           </div>
         ) : (

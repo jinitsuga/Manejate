@@ -4,7 +4,6 @@ import "./placeCard.css";
 import {
   LoadScript,
   GoogleMap,
-  Marker,
   DirectionsRenderer,
   DirectionsService,
 } from "@react-google-maps/api";
@@ -20,13 +19,7 @@ type mapContent = {
 
 const apiKey: string = process.env.NEXT_PUBLIC_MAPS_KEY!;
 
-const MapsContent: FC<mapContent> = ({
-  origin,
-  destinationId,
-  destinCoords,
-  closeMap,
-  mapShown,
-}) => {
+const MapsContent: FC<mapContent> = ({ origin, destinCoords, closeMap }) => {
   const [directions, setDirections] = useState<any>();
   useEffect(() => {
     const checkForClick = (e: any) => {
