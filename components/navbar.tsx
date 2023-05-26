@@ -8,7 +8,9 @@ export default function Navbar() {
         <li>
           <Link href="/">Home</Link>
         </li>
-        <li>About</li>
+        <li>
+          <Link href="/about">About</Link>
+        </li>
       </ul>
     </nav>
   );

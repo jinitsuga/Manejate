@@ -1,17 +1,19 @@
 .route-btn {
-  font-size: 16px;
+  font-size: 18px;
+  color: white;
   height: 50px;
   width: 80px;
   border-radius: 4px;
   border: none;
-  background-color: rgb(235, 174, 95);
+  background-color: rgb(0, 0, 0);
   margin: 4px;
+  padding: 2px;
 }
 .route-btn:active {
   border: solid 2px;
 }
 .route-btn:hover {
-  background-color: rgb(235, 170, 5);
+  background-color: rgb(52, 50, 46);
   cursor: pointer;
 }
 .map-modal {
