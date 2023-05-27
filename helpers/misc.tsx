@@ -47,6 +47,12 @@ export const renderFilteredCards = ({
       );
       return renderCards(lodgingPlaces, origin);
 
+    case "health":
+      const healthPlaces = places.filter((place: Place) =>
+        place.types.includes("health")
+      );
+      return renderCards(healthPlaces, origin);
+
     case "all":
       return renderCards(places, origin);
   }
