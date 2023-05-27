@@ -26,7 +26,7 @@ export default function Position() {
       { enableHighAccuracy: true, maximumAge: 10000, timeout: 5000 }
     );
     setPosition({
-      coords: { lat: -34.6657801, long: -54.1536834 },
+      coords: { lat: -34.9094716, long: -56.1531552 },
       time: positionTime,
     });
     console.log("getposition is being run ");
@@ -46,7 +46,7 @@ export default function Position() {
             {/* This link component should be improved by passing req arguments (&lat=12323&long=123213) etc */}
             <Link
               className={styles.textBtn}
-              href={`/position/${position.coords.lat}~${position.coords.long}~4000`}
+              href={`/position/${position.coords.lat}~${position.coords.long}~5000`}
             >
               Mostrar establecimientos cercanos{" "}
               <span className={styles.emphasis}>abiertos</span>

@@ -55,7 +55,7 @@ const MapsContent: FC<mapContent> = ({ origin, destinCoords, closeMap }) => {
           <DirectionsService
             options={{
               destination: destinCoords,
-              origin: { lat: -34.6657801, lng: -54.1536834 },
+              origin: origin,
               travelMode: "WALKING" as google.maps.TravelMode,
             }}
             callback={(result, status) => {

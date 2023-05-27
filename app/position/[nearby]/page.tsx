@@ -2,7 +2,6 @@ import { findPlaces } from "@/helpers/location";
 import Layout from "@/components/layout";
 import { PlacesContainer } from "@/components/placesContainer";
 
-console.log("location pinged");
 export default async function Places({ params }: any) {
   const paramsArr = params.nearby.split("~");
 

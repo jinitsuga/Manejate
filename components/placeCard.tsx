@@ -12,15 +12,7 @@ export type Place = {
   types: Array<string>;
   id: string;
 };
-export default function PlaceCard({
-  name,
-  open,
-  types,
-  lat,
-  lng,
-  id,
-  origin,
-}: Place) {
+export default function PlaceCard({ name, open, lat, lng, id, origin }: Place) {
   const [routeShown, setRouteShown] = useState<boolean>(false);
 
   // Setting up closing map modal on outside click
@@ -36,7 +28,7 @@ export default function PlaceCard({
       <button
         onClick={(e) => {
           e.preventDefault();
-          // console.log(process.env.NEXT_PUBLIC_MAPS_KEY);
+          console.log(origin);
           setRouteShown(true);
         }}
         className="route-btn"
