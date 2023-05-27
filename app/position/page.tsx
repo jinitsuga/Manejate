@@ -26,7 +26,7 @@ export default function Position() {
       { enableHighAccuracy: true, maximumAge: 10000, timeout: 5000 }
     );
     setPosition({
-      coords: { lat: -34.9032464, long: -56.1584301 },
+      coords: { lat: 41.397442, long: 2.162015 },
       time: positionTime,
     });
     console.log("getposition is being run ");
