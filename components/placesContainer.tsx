@@ -3,9 +3,10 @@ import { useState } from "react";
 import { renderFilteredCards } from "@/helpers/misc";
 import styles from "../app/page.module.css";
 import Image from "next/image";
-import foodIcon from "../app/food-dish.png";
-import bedIcon from "../app/bed.png";
-import clipboardIcon from "../app/clipboard.png";
+import foodIcon from "../app/icons/food-dish.png";
+import bedIcon from "../app/icons/bed.png";
+import clipboardIcon from "../app/icons/clipboard.png";
+import healthIcon from "../app/icons/health.png";
 
 type Origin = { lat: number; lng: number };
 
@@ -47,6 +48,17 @@ export const PlacesContainer = ({ places, origin }: Places) => {
           >
             <Image src={bedIcon} width={30} height={30} alt="bed icon" />
             Estadía
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={() => {
+              setFilter("health");
+            }}
+            className={styles.regularBtn}
+          >
+            <Image src={healthIcon} width={30} height={30} alt="bed icon" />
+            Salud
           </button>
         </li>
         <li>
