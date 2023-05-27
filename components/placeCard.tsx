@@ -22,7 +22,6 @@ export default function PlaceCard({
   origin,
 }: Place) {
   const [routeShown, setRouteShown] = useState<boolean>(false);
-  const [mapShown, setMapShown] = useState<boolean>(false);
 
   // Setting up closing map modal on outside click
 
