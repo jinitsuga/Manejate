@@ -4,6 +4,7 @@ import Layout from "@/components/layout";
 import { getPosition, watchPosition } from "@/helpers/location";
 import styles from "../page.module.css";
 import Link from "next/link";
+import Slider from "@/components/slider";
 
 type Position = {
   coords: { lat: number; long: number };
@@ -12,6 +13,8 @@ type Position = {
 
 export default function Position() {
   const [position, setPosition] = React.useState<Position | null>();
+  const [radius, setRadius] = React.useState<number>(500);
+
   React.useEffect(() => {
     let positionTime: number = 0;
     // Not using this atm so I don't depend on having phone around
@@ -43,6 +46,7 @@ export default function Position() {
         {position ? (
           <div className={styles.textContainer}>
             <span>Encontramos tu posición.</span>
+            <Slider radius={radius} setRadius={setRadius} />
             {/* This link component should be improved by passing req arguments (&lat=12323&long=123213) etc */}
             <Link
               className={styles.textBtn}
