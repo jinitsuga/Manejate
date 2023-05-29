@@ -25,8 +25,8 @@ export default async function Places({ params }: any) {
     <Layout>
       <div style={{ textAlign: "center" }}>
         <h2 style={{ maxWidth: "275px" }}>
-          Lo que hay abierto cerca en{" "}
-          <strong style={{ color: "green" }}>{locationName}</strong> :
+          Lo que hay abierto cerca de ti en
+          <strong style={{ color: "green" }}> {locationName}</strong>:
         </h2>
         <PlacesContainer places={openPlaces} origin={{ lat, lng: long }} />
       </div>

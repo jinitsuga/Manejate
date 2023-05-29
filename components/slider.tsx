@@ -9,7 +9,7 @@ type SliderType = {
 export default function Slider({ setRadius, radius }: SliderType) {
   return (
     <>
-      <h3 className={styles.sliderTitle}>Radio de búsqueda:</h3>
+      <h3 className={styles.sliderTitle}>Rango de búsqueda:</h3>
       <span className={styles.radiusNumber}>{radius} mts</span>
       <input
         className={styles.slider}

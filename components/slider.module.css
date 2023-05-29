@@ -5,6 +5,7 @@
 .radiusNumber {
   font-size: 18px;
   font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .slider {
@@ -15,23 +16,23 @@
 }
 
 .slider::-webkit-slider-runnable-track {
-  height: 20px;
-  background: #ddd;
+  background: #7d7d7d;
   border: none;
   border-radius: 3px;
+  width: 250px;
+  height: 10px;
 }
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: none;
-  height: 25px;
-  width: 15px;
-  border-radius: 30%;
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  border: solid 3px;
   background: green;
-}
-.slider::-ms-track {
-  width: 275px;
+  margin-top: -12px;
 }
 
-.slider:active {
-  outline: solid 4px;
+.slider::-ms-track {
+  width: 275px;
 }
