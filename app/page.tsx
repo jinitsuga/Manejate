@@ -16,10 +16,10 @@ export default function Home() {
           tuyo.{" "}
         </h4>
         <p className={styles.mainText}>
-          <strong>Disclaimer: </strong>Esta app necesita acceder a tu ubicación
-          para poder brindarte información sobre los locales abiertos en tu
-          cercanía. Puedes optar por no revelar tu ubicación, pero de no
-          hacerlo, la app no funcionará correctamente.
+          <strong>Aviso: </strong>Esta app necesita acceder a tu ubicación para
+          poder brindarte información sobre los locales abiertos en tu cercanía.
+          Puedes optar por no revelar tu ubicación, pero de no hacerlo, la app
+          no funcionará correctamente.
         </p>
         <Link className={styles.mainBtn} href="/position">
           Comenzar

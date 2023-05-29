@@ -13,7 +13,7 @@ type Position = {
 
 export default function Position() {
   const [position, setPosition] = React.useState<Position | null>();
-  const [radius, setRadius] = React.useState<number>(500);
+  const [radius, setRadius] = React.useState<number>(1000);
 
   React.useEffect(() => {
     let positionTime: number = 0;
@@ -39,7 +39,7 @@ export default function Position() {
     console.log(position);
   };
 
-  console.log(position);
+  // console.log(position);
   return (
     <Layout>
       <section className={styles.main}>

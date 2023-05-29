@@ -1,4 +1,5 @@
 "use client";
+import styles from "./slider.module.css";
 
 type SliderType = {
   radius: number;
@@ -6,13 +7,14 @@ type SliderType = {
 };
 
 export default function Slider({ setRadius, radius }: SliderType) {
-  //   const [radius, setRadius] = useState<number>(500);
   return (
     <>
-      <h3>Radio de búsqueda:</h3>
-      <span>{radius}</span>
+      <h3 className={styles.sliderTitle}>Radio de búsqueda:</h3>
+      <span className={styles.radiusNumber}>{radius} mts</span>
       <input
+        className={styles.slider}
         type="range"
+        value={radius}
         min={500}
         max={5000}
         step={500}
