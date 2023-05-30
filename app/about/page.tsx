@@ -15,7 +15,7 @@ export default async function About() {
         </div>
         <ul className={styles.btnList}>
           <li>
-            <Link href={"https://github.com/jinitsuga"}>
+            <Link target="_blank" href={"https://github.com/jinitsuga"}>
               <Image
                 src={ghIcon}
                 width={30}
@@ -26,6 +26,7 @@ export default async function About() {
           </li>
           <li>
             <Link
+              target="_blank"
               className={styles.regularBtn}
               href={"https://agu-portfolio.vercel.app/"}
             >
