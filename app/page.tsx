@@ -21,7 +21,7 @@ export default function Home() {
           Puedes optar por no revelar tu ubicación, pero de no hacerlo, la app
           no funcionará correctamente.
         </p>
-        <Link className={styles.mainBtn} href="/position">
+        <Link className={styles.importantBtn} href="/position">
           Comenzar
         </Link>
       </main>
