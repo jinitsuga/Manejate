@@ -65,8 +65,14 @@
   border-radius: 4px;
   padding: 3px;
   margin: 4px;
-  max-width: 300px;
+  max-width: 250px;
   margin-bottom: 10px;
+}
+.textBtn:hover {
+  border-color: green;
+}
+.textBtn:active {
+  border-color: green;
 }
 
 .regularBtn:hover {

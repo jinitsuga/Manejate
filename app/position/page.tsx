@@ -52,9 +52,9 @@ export default function Position() {
               className={styles.textBtn}
               href={`/position/${position.coords.lat}~${position.coords.long}~1000`}
             >
-              Mostrar establecimientos cercanos{" "}
-              <span className={styles.emphasis}>abiertos </span>
-              en un radio de {radius} metros.
+              Mostrar establecimientos
+              <span className={styles.emphasis}> abiertos </span>({radius}{" "}
+              metros)
             </Link>
             <span className={styles.shownDisclaimer}>
               * Solo se mostrarán negocios registrados bajo "Google business".
