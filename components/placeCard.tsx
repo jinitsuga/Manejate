@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import MapsContent from "./MapsContent";
 import "./placeCard.css";
 
@@ -28,7 +28,6 @@ export default function PlaceCard({ name, open, lat, lng, id, origin }: Place) {
       <button
         onClick={(e) => {
           e.preventDefault();
-          console.log(origin);
           setRouteShown(true);
         }}
         className="route-btn"

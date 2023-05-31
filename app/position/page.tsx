@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Layout from "@/components/layout";
-import { getPosition, watchPosition } from "@/helpers/location";
+import { getPosition } from "@/helpers/location";
 import styles from "../page.module.css";
 import Link from "next/link";
 import Slider from "@/components/slider";

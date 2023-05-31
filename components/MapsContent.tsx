@@ -60,7 +60,6 @@ const MapsContent: FC<mapContent> = ({ origin, destinCoords, closeMap }) => {
             }}
             callback={(result, status) => {
               if (status === "OK" && !directions) {
-                console.log("DIRECTIONS OK");
                 setDirections(result);
               }
             }}
