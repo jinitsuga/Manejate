@@ -48,7 +48,7 @@ export default function Position() {
             {/* This link component should be improved by passing req arguments (&lat=12323&long=123213) etc */}
             <Link
               className={styles.textBtn}
-              href={`/position/${position.coords.lat}~${position.coords.long}~1000`}
+              href={`/position/${position.coords.lat}~${position.coords.long}~${radius}`}
             >
               Mostrar establecimientos
               <span className={styles.emphasis}> abiertos </span>({radius}{" "}
