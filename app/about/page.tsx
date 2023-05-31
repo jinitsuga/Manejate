@@ -10,7 +10,7 @@ export default async function About() {
       <section className={styles.main}>
         <h3 className=""></h3>
         <div className={styles.textContainer}>
-          Soy Agu, desarrollador, y este es mi primer proyecto con Nextjs y tal
+          Soy Agu, desarrollador. Este es mi primer proyecto con Nextjs y tal
           vez le sirva a algún viajero por ahí :)
         </div>
         <ul className={styles.btnList}>

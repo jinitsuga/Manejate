@@ -17,7 +17,6 @@ export default async function Places({ params }: any) {
     }
     return place.opening_hours.open_now;
   });
-  console.log(openPlaces);
 
   const locationName: string = places.results[0].name;
 

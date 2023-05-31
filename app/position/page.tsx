@@ -16,28 +16,26 @@ export default function Position() {
   const [radius, setRadius] = React.useState<number>(1000);
 
   React.useEffect(() => {
-    let positionTime: number = 0;
+    // let positionTime: number = 0;
     // Not using this atm so I don't depend on having phone around
     // hardcoding coords while I develop
     // The REAL get position function -->
-    // getPosition(setPosition);
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        positionTime = position.timestamp;
-      },
-      () => {},
-      { enableHighAccuracy: true, maximumAge: 10000, timeout: 5000 }
-    );
-    setPosition({
-      coords: { lat: 41.397442, long: 2.162015 },
-      time: positionTime,
-    });
-    console.log("getposition is being run ");
-  }, []);
+    getPosition(setPosition);
+    //------------------
 
-  const logPosition = () => {
-    console.log(position);
-  };
+    // navigator.geolocation.getCurrentPosition(
+    //   (position) => {
+    //     positionTime = position.timestamp;
+    //   },
+    //   () => {},
+    //   { enableHighAccuracy: true, maximumAge: 10000, timeout: 5000 }
+    // );
+    // setPosition({
+    //   coords: { lat: 41.397442, long: 2.162015 },
+    //   time: positionTime,
+    // });
+    // console.log("getposition is being run ");
+  }, []);
 
   // console.log(position);
   return (
