@@ -55,7 +55,7 @@ export default function Position() {
               metros)
             </Link>
             <span className={styles.shownDisclaimer}>
-              * Solo se mostrarán negocios registrados bajo "Google business".
+              * Solo se mostrarán negocios registrados bajo Google business.
               Seguramente haya negocios cerca que no figuren aquí.
             </span>
           </div>

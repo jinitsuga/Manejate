@@ -3,8 +3,6 @@ import Layout from "@/components/layout";
 import React from "react";
 import Link from "next/link";
 
-// console.log(process.env.MAPS_KEY);
-
 export default function Home() {
   return (
     <Layout>
