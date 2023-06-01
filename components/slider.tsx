@@ -7,12 +7,14 @@ type SliderType = {
 };
 
 export default function Slider({ setRadius, radius }: SliderType) {
+  const webkitEngine = navigator.userAgent.includes("like Gecko");
+
   return (
     <>
       <h3 className={styles.sliderTitle}>Rango de búsqueda:</h3>
       <span className={styles.radiusNumber}>{radius} mts</span>
       <input
-        className={styles.slider}
+        className={webkitEngine ? styles.slider : styles.sliderMoz}
         type="range"
         value={radius}
         min={500}
