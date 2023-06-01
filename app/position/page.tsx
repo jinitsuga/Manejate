@@ -11,7 +11,6 @@ type Position = {
   time: number;
 };
 
-console.log(navigator.userAgent.includes("like Gecko"));
 export default function Position() {
   const [position, setPosition] = React.useState<Position | null>();
   const [radius, setRadius] = React.useState<number>(1000);
